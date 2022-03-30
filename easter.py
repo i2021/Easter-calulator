@@ -12,7 +12,6 @@ while True:
     try:
         option = int(option)
         if option in (1, 2):
-            print("1,2")
             break
     except ValueError:
         print("This is not a valid option")
