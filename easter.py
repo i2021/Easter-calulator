@@ -2,18 +2,11 @@ from matplotlib import pyplot as plt
 
 while True:
     low = input("Year low bound: (default --> 1000) ") or 1000
-    try:
-        low = int(low)
-        print("Using year as low bound: ", low)
-        break
-    except ValueError:
-        print("This is not a valid year. Please enter a valid year")
-
-while True:
     high = input("Year high bound: (default --> 3000) ") or 3000
     try:
+        low = int(low)
         high = int(high)
-        print("Using year as high bound: ", high)
+        print("Calculating easter in range:", low, "-->", high)
         break
     except ValueError:
         print("This is not a valid year. Please enter a valid year")
