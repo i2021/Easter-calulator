@@ -2,28 +2,20 @@ import datetime
 
 from matplotlib import pyplot as plt
 
-print("(1) --> Calculate easter in year range")
-print("(2) --> Calculate easter for specific year")
+print("""
+(1) --> Calculate easter in year range
+(2) --> Calculate easter for specific year
+""")
 
 while True:
     option = input("Choose (1) / (2) ")
     try:
         option = int(option)
-        if option == 1:
+        if option in (1, 2):
+            print("1,2")
             break
-        else:
-            while True:
-                year = datetime.datetime.now().year
-                year = input("Specify year ") or year
-                try:
-                    y = int(year)
-                    print("Using year", year)
-                    break
-                except ValueError:
-                    print("This is not a valid year. Please enter a valid year")
-        break
     except ValueError:
-        print("This is not a valid year. Please enter a valid year")
+        print("This is not a valid option")
 
 
 # g - Golden year - 1
@@ -66,6 +58,15 @@ if option == 1:
     plt.title("Easter day in  a given year")
     plt.show()
 else:
+    while True:
+        year = datetime.datetime.now().year
+        year = input("Specify year ") or year
+        try:
+            y = int(year)
+            print("Using year", year)
+            break
+        except ValueError:
+            print("This is not a valid year. Please enter a valid year")
     p = p_grabber()
     d = 1 + (p + 27 + (p + 6) // 40) % 31
     m = 3 + (p + 26) // 30
